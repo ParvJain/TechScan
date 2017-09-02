@@ -1,0 +1,26 @@
+<br />
+<div class="row">
+  <div class="col-md-12">
+    <div class="tile" ng-repeat="technology in technologies">
+      <div class="row">
+        <div class="col-md-3">
+          <img ng-src="{{technology.image}}" height="100" />
+        </div>
+        <div class="col-md-9">
+          <h4><a ng-href="{{ './index.html#!/repo/' + technology.slug}}">{{technology.name}}</a></h4>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- <div class="col-md-4"> -->
+    <!-- <div class="tile">
+      <h6 class="text-left"> Languages </h6>
+      <table cellspacing=10>
+        <tr>
+          <td> Python </td>
+          <td> <b> 9,894</b></td>
+        </tr>
+      </table>
+    </div> -->
+  <!-- </div> -->
+</div>

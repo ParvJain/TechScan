@@ -1,0 +1,30 @@
+<br>
+<div class="row">
+  <div class="col-sm-6 col-md-4">
+    <div class="thumbnail">
+      <img ng-src="{{profileData.avatar_url}}" height="100">
+      <div class="caption">
+        <h3>{{profileData.name}}</h3>
+        @{{profileData.login}}
+        <p>
+        {{profileData.bio}}
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-8">
+    <div class="tile">
+      <div class="row">
+        <div class="col-md-6" ng-repeat="repo in profileRepoData">
+          <div class="caption">
+            <b>{{repo.full_name}}</b>
+            <p>{{repo.description}}
+
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

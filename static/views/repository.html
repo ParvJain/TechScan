@@ -1,0 +1,27 @@
+
+<br/>
+<div class="row">
+  <div class="col-md-12 tile" ng-if="repoData">
+    <h4 class="text-left">{{repoData.total_count}} repository results</h4>
+    <input value="" ng-model="filterWord" class="form-control" type="text" placeholder="Search repository..">
+    <div class="row" ng-repeat="repo in repoData.items.slice(((currentPage-1)*9), ((currentPage)*9)) | filter:filterWord">
+      <div class="text-left" style="margin:10px">
+<a ng-href="{{ './index.html#!/users/' + repo.owner.login}}">
+  {{repo.full_name}}
+
+</a>
+<p>{{repo.description}}</p>
+      </div>
+    </div>
+    <pagination
+      ng-model="currentPage"
+      total-items="repoData.items.length"
+      max-size="maxSize"
+      boundary-links="true">
+    </pagination>
+  </div>
+  <div class="col-md-12 tile"  ng-if="!repoData">
+    <h3>Fetching data from Github, please wait..</h3>
+    <img src="static/images/loading.gif"/>
+  </div>
+</div>
